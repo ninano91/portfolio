@@ -1,0 +1,834 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: #F9F8F8; */
+  font-family: 'Raleway' !important;
+  font-family: "NotoSansKR";
+
+}
+
+body.fix {
+  background-color: #fff;
+
+}
+
+.container {
+  width: 1680px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  /* background-color: rgba(2,2,2,0.9); */
+  position: fixed;
+  text-transform: uppercase;
+  transition: all 0.6s;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  font-family: "Raleway", sans-serif;
+}
+
+body .bg {
+  width: 150%;
+  height: 150%;
+  background-color: rgba(2, 2, 2, 0.8);
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body.fix .bg {
+  display: none;
+}
+
+header.fix {
+  width: 100%;
+  height: 50px;
+  background: #F9F8F8;
+  font-family: "Raleway", sans-serif;
+}
+
+header .hd_1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+header .hd_1 h1 {
+  font-size: 8rem;
+  color: #222;
+  /* color: #fff; */
+  text-align: center;
+  margin-top: 500;
+  text-transform: uppercase;
+  font-weight: 900;
+  transition: all .6s;
+
+}
+
+header.fix .hd_1 h1 {
+  font-size: 50px;
+  margin-top: 25px;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+  color: #222;
+}
+
+header .hd_1 ul.gnb {
+  opacity: 0;
+}
+
+header.fix ul.gnb {
+  display: flex;
+  position: absolute;
+  right: 118px;
+  top: 100%;
+  /* transform: translateY(-50%); */
+  opacity: 1;
+  transition: all .6s;
+}
+
+header.fix ul.gnb li {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -1px;
+  width: 120px;
+}
+
+.menu,
+.menu::after {
+  animation-delay: var(--animation-delay, 2s);
+  animation-iteration-count: var(--interation, 1);
+  animation-duration: var(--duration, 800ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.menu {
+  --animation-delay: var(--delay, 0);
+  --animation-duration: var(--duration, 800ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  font-size: 19px;
+  animation-name: clip-text;
+  color: #222;
+  white-space: nowrap;
+  text-align: left;
+  text-align: center;
+  font-size: 18px;
+  /* width: 120px; */
+}
+
+.menu:hover:after {
+  content: "";
+  position: absolute;
+  z-index: 999;
+  top: 20%;
+  left: 0%;
+  bottom: 0;
+  background-color: #481bd9;
+  margin-top: 3px;
+  height: 40%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+  animation-name: text-revealer;
+}
+
+.menu:hover {}
+
+@keyframes clip-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes text-revealer {
+
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+.glitch-window {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 100%;
+  color: #f9f8f8;
+  text-shadow: 2px 0 rgba(0, 0, 0, 0.4), -1px 0 yellow, -2px 0 green;
+  overflow: hidden;
+  animation: crt-me 2000ms linear infinite alternate-reverse;
+  /* background-color: #f9f8f8; */
+}
+
+@keyframes crt-me {
+  14% {
+    clip: rect(14px, 9999px, 107px, 0);
+  }
+
+  28% {
+    clip: rect(39px, 9999px, 85px, 0);
+  }
+
+  42% {
+    clip: rect(64px, 9999px, 64px, 0);
+  }
+
+  56% {
+    clip: rect(30px, 9999px, 90px, 0);
+  }
+
+  70% {
+    clip: rect(20px, 9999px, 64px, 0);
+  }
+
+  86% {
+    clip: rect(45px, 9999px, 107px, 0);
+  }
+
+  100% {
+    clip: rect(64px, 9999px, 80px, 0);
+  }
+}
+
+body section.Portfolio_list {
+  margin-top: 600px;
+
+}
+
+body.fix section.Portfolio_list {
+  margin-top: 300px;
+  transition: all 0.5s;
+}
+
+section.Portfolio_list img {
+  width: 50%;
+}
+
+section.Portfolio_list ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+section.Portfolio_list ul li {}
+
+
+section.Portfolio_list ul li:nth-child(1) {}
+
+
+section.Portfolio_list ul li:nth-child(2n) {
+  margin-top: 240px;
+
+
+  display: block;
+}
+
+section.Portfolio_list ul li:nth-child(2n-1) {
+  margin-bottom: 240px;
+
+}
+
+section.Portfolio_list ul li:last-child {}
+
+section.Portfolio_list ul li a {}
+
+section.Portfolio_list ul li a .img_box {
+  width: 693px;
+  height: 420px;
+  background-color: darkgray;
+}
+
+section.Portfolio_list ul li a .img_box img {
+  width: 100%;
+  height: 100%;
+}
+
+.Portfolio_list ul {}
+
+
+
+.Portfolio_list ul li a {}
+
+.Portfolio_list ul li a .txt_box {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-bottom: 10px;
+  vertical-align: bottom;
+  align-items: center;
+  /* 교차축 정렬, 중요중요중요*/
+}
+
+.Portfolio_list ul li a .txt_box .tbox_1 {
+  vertical-align: bottom;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Portfolio_list ul li a .txt_box .tbox_1 p {
+  font-size: 25px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.Portfolio_list ul li:nth-child(1) a .txt_box .tbox_1 p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.Portfolio_list ul li:nth-child(5) a .txt_box .tbox_1 p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.Portfolio_list ul li a .txt_box .tbox_1 span {
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 500;
+  padding-top: 10px;
+  font-family: 'Gothic A1', sans-serif;
+  letter-spacing: -1px;
+}
+
+.Portfolio_list ul li a .txt_box .tbox_2 {
+  /* display: flex;
+  align-content: flex-end; */
+  /*  font-family: "Raleway", sans-serif; */
+  font-family: 'Raleway';
+}
+
+.Portfolio_list ul li a .txt_box .tbox_2 p {
+  width: 100%;
+  text-align: right;
+  padding-right: 5px;
+  box-sizing: border-box;
+}
+
+.Portfolio_list ul li a .txt_box .tbox_2 p:nth-child(1) {
+  font-family: 'Gothic A1', sans-serif;
+  font-weight: 600;
+}
+
+.Portfolio_list ul li a .txt_box .tbox_2 p:nth-child(2) {}
+
+.Portfolio_list ul li a .txt_box .tbox_2 p:nth-child(1) {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.Portfolio_list ul li a .txt_box .tbox_2 p:nth-child(2) {
+  font-family: 'Raleway';
+  font-weight: 500;
+}
+
+.Portfolio_list ul li a {}
+
+.Portfolio_list ul li a .img_box {
+  position: relative;
+  width: 693px;
+  height: 420px;
+  transition: 0.6s linear;
+}
+
+/* 이미지 박스 호버 효과 */
+
+.Portfolio_list ul li .img_box .img_card {
+  width: 693px;
+  height: 420px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0;
+  /* display: none; */
+}
+
+.Portfolio_list ul li .img_box .img_card i {
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  opacity: 0;
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  line-height: 65px;
+  border-radius: 50%;
+}
+
+.Portfolio_list ul li .img_box:hover .img_card {
+  display: block;
+  transition: 0.2s linear;
+  opacity: 0.8;
+}
+
+.Portfolio_list ul li .img_box:hover .img_card i {
+  display: block;
+  transition: 0.2s linear;
+  opacity: 1;
+}
+
+
+section .container .skills {
+  width: 100%;
+  height: 100vh;
+}
+
+section.skills .container>h2 {
+  text-align: center;
+  margin-top: 4em;
+  font-size: 40px;
+  margin-bottom: 2em;
+  font-weight: 700;
+  color: #222;
+  padding-top: 15vh;
+  font-family: 'Raleway' !important;
+  line-height: 30px;
+}
+
+section.skills .container>h2 span {
+  font-size: 18px;
+  font-family: "NotoSansKR";
+  letter-spacing: -1px;
+}
+
+section.skills .img_box {}
+
+section.skills .logo_list {
+  display: flex;
+  flex-direction: column;
+}
+
+section.skills .logo_list ul {
+  display: flex;
+  justify-content: center;
+}
+
+section.skills .logo_list ul li {
+  height: 150px;
+  margin-right: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+section.skills .logo_list ul li:last-child {
+  margin-right: 0;
+}
+
+section.skills .logo_list ul li .logo {}
+
+section.skills .logo_list ul li .logo img {
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+}
+
+section.skills:hover .logo_list ul li .logo img {
+  animation: float 1s ease-in-out infinite
+}
+
+section.skills:hover .logo_list ul li .logo img:nth-child(4+n) {
+  animation: float 1s ease-in-out infinite
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+section.skills .logo_list p {
+  text-align: center;
+  font-size: 18px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+section.skills .logo_list p:nth-of-type(1) {
+  margin-top: 100px;
+}
+
+section.skills .about {
+  display: flex;
+  justify-content: center;
+}
+
+section.skills .about .about_01 {}
+
+section.skills .about .about_02 {
+  margin-left: 150px;
+}
+
+section.skills .about h3 {
+  font-size: 18px;
+  font-family: 'Raleway';
+  font-weight: 700;
+  padding-top: 50px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+section.skills .about h3::after {
+  display: block;
+  content: "";
+  clear: both;
+  border-right: 1px solid #666;
+}
+
+section.skills .about p {
+  font-family: "NotoSansKR";
+  font-size: 14px;
+  line-height: 22px;
+}
+
+section.skills .about p>i {
+  color: #666;
+}
+
+
+section.contact {
+  width: 100%;
+  height: 80vh;
+  /* background-color: #666; */
+}
+
+section.contact h2 {
+  text-align: center;
+  margin-top: 4em;
+  font-size: 40px;
+  margin-bottom: 2em;
+  font-weight: 700;
+  color: #222;
+  padding-top: 10vh;
+  font-family: 'Raleway';
+  line-height: 30px;
+}
+
+section.contact .container>p {
+  text-align: center;
+  font-size: 16px;
+  line-height: 30px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+section.contact .container>p>i {
+  animation: smile 0.5s infinite alternate;
+  font-size: 20px;
+}
+
+@keyframes smile {
+  to {
+    transform: translateY(5px);
+  }
+
+  from {
+    transform: translateY(0px);
+  }
+}
+
+section.contact .cacao {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+}
+
+section.contact .c_text {
+  margin-left: 100px;
+  font-weight: 500;
+}
+
+section.contact .c_text p {
+  text-align: left;
+  line-height: 40px;
+}
+
+section.contact .c_text p:nth-child(1) {
+  padding-top: 40px;
+  text-align: left;
+  font-size: 20px;
+}
+
+section.contact .c_text p i {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+section.contact .cacao img {
+  width: 150px;
+}
+
+
+/* 상세페이지(모달창) 디자인 */
+
+section.about{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+section.about button.about_close{
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  z-index: 12;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  color: #222;
+  /* border: 3px solid #888; */
+  background-color: #f9f8f8;
+  font-weight: bold;
+  box-shadow: 2px 2px 2px 0  #888;
+}
+section.about button.about_close:active{
+  background-color: #222;
+  color: #f9f8f8;
+  border: 3px solid rgb(58, 58, 58);
+  box-shadow: none;
+
+}
+
+/* 상세페이지 글자 디자인 */
+
+section.about .about_inner{
+  width: 98%;
+  height: 96%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 5% 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+section.about .about_inner .about_txt{
+  width: 40%;
+}
+
+section.about .about_inner h2{
+  font-size: 40px;
+  font-weight: bold;
+  margin: 5% 0 15% 0 ;
+}
+section.about .about_inner h2>span{
+  font-size: 30px;
+}
+
+section.about .about_inner p.explain{
+  margin-bottom: 12%;
+  line-height: 25px;
+}
+section.about .about_inner p.until{
+  margin-bottom: 10%;
+}
+section.about .about_inner .circles{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10%;
+}
+section.about .about_inner .circles span{
+  width: 80px;
+  height: 80px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  line-height: 80px;
+  text-align: center;
+  font-family: "NotoSansKR";
+}
+
+section.about .about_inner a.go{
+  display: block;
+  font-weight: bold;
+  border: 1px solid #222;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+
+section.about .about_inner p.git_hub{
+
+}
+
+
+/* 상세페이지 번호별 주조 보조색 입히기 */
+
+/* 가시성을 위해 설정해놓은 보더값 초기화 */
+.Portfolio_list ul li .about .about_inner .circles span{
+  border: 1px solid transparent;
+  box-shadow: 2px 2px 3px 0 #888;
+  font-weight: bold;
+}
+
+.Portfolio_list ul li:nth-child(1) .about_inner .circles span:nth-child(1){
+  background-color: #000000;
+  color: #fff;
+}
+.Portfolio_list ul li:nth-child(1) .about_inner .circles span:nth-child(2){
+  background-color: #FFC019;
+}
+.Portfolio_list ul li:nth-child(1) .about_inner .circles span:nth-child(3){
+  color: #fff;
+  background-color: #545152;
+}
+
+.Portfolio_list ul li:nth-child(2) .about_inner .circles span:nth-child(1){
+  background-color: #3E2B2C;
+  color: #fff;
+}
+.Portfolio_list ul li:nth-child(2) .about_inner .circles span:nth-child(2){
+  background-color: #887153;
+  color: #fff;
+}
+.Portfolio_list ul li:nth-child(2) .about_inner .circles span:nth-child(3){
+  background-color: #F1EBD6;
+}
+
+.Portfolio_list ul li:nth-child(3) .about_inner .circles span:nth-child(1){
+  background-color: #442580;
+  color: #fff;
+}
+.Portfolio_list ul li:nth-child(3) .about_inner .circles span:nth-child(2){
+  background-color: #fc9900;
+}
+.Portfolio_list ul li:nth-child(3) .about_inner .circles span:nth-child(3){
+  background-color: #661417;
+  color: #fff;
+}
+
+.Portfolio_list ul li:nth-child(4) .about_inner .circles span:nth-child(1){
+  background-color: #5BAC3E;
+  color: #fff;
+}
+.Portfolio_list ul li:nth-child(4) .about_inner .circles span:nth-child(2){
+  background-color: #f7EC4E;
+}
+.Portfolio_list ul li:nth-child(4) .about_inner .circles span:nth-child(3){
+  background-color: #EBE2E5;
+}
+
+.Portfolio_list ul li:nth-child(5) .about_inner .circles span:nth-child(1){
+  background-color: #0069B4;
+  color: #fff;
+}
+.Portfolio_list ul li:nth-child(5) .about_inner .circles span:nth-child(2){
+  background-color: #355691;
+  color: #fff;
+}
+.Portfolio_list ul li:nth-child(5) .about_inner .circles span:nth-child(3){
+  background-color: #D8DDEC;
+}
+
+.Portfolio_list ul li:nth-child(6) .about_inner .circles span:nth-child(1){
+  background-color: ;
+}
+.Portfolio_list ul li:nth-child(6) .about_inner .circles span:nth-child(2){
+  background-color: ;
+}
+.Portfolio_list ul li:nth-child(6) .about_inner .circles span:nth-child(3){
+  background-color: ;
+}
+
+.Portfolio_list ul li:nth-child(7) .about_inner .circles span:nth-child(1){
+  background-color: ;
+}
+.Portfolio_list ul li:nth-child(7) .about_inner .circles span:nth-child(2){
+  background-color: ;
+}
+.Portfolio_list ul li:nth-child(7) .about_inner .circles span:nth-child(3){
+  background-color: ;
+}
+
+.Portfolio_list ul li:nth-child(8) .about_inner .circles span:nth-child(1){
+  background-color: ;
+}
+.Portfolio_list ul li:nth-child(8) .about_inner .circles span:nth-child(2){
+  background-color: ;
+}
+.Portfolio_list ul li:nth-child(8) .about_inner .circles span:nth-child(3){
+  background-color: ;
+}
+
+.Portfolio_list ul li:nth-child(9) .about_inner .circles span:nth-child(1){
+  background-color: ;
+}
+.Portfolio_list ul li:nth-child(9) .about_inner .circles span:nth-child(2){
+  background-color: ;
+}
+.Portfolio_list ul li:nth-child(9) .about_inner .circles span:nth-child(3){
+  background-color: ;
+}
+
+.Portfolio_list ul li:nth-child(10) .about_inner .circles span:nth-child(1){
+  background-color: #000000;
+  color: #fff;
+}
+.Portfolio_list ul li:nth-child(10) .about_inner .circles span:nth-child(2){
+  background-color: #A81C23;
+  color: #fff;
+}
+.Portfolio_list ul li:nth-child(10) .about_inner .circles span:nth-child(3){
+  background-color: #FFFFFF;
+}
