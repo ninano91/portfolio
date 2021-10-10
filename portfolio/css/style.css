@@ -228,6 +228,9 @@ body section.Portfolio_list {
   margin-top: 600px;
 
 }
+body section.Portfolio_list>h2{
+  text-indent: -9999px;
+}
 
 body.fix section.Portfolio_list {
   margin-top: 300px;
@@ -708,8 +711,8 @@ section.about .about_inner a.go{
   margin-bottom: 5%;
 }
 
-section.about .about_inner p.git_hub{
-
+section.about .about_inner .git_hub{
+  
 }
 
 
