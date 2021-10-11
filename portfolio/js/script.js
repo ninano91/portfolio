@@ -1,5 +1,11 @@
 $(function () {
 
+    //알림(모달창) 닫기, 닫기버튼 사용시 스크롤 탑값 이동
+    $(".notice_inner i").click(function(){
+        $(".notice").fadeOut();
+        window.scrollTo({top:100, behavior:'auto'});
+    })
+
     //a링크 클릭시 상단으로 이동하는 것 초기화 하기 (헤더메뉴)
     $(".gnb li a").click(function (event) { // a태그 클릭시 작동
         // 클릭된 태그의 본래의 기능을 막음 즉, a태그 본래 기능을 막음
@@ -36,7 +42,7 @@ $(function () {
         }, 500);
     });
 
-    //상세(모달창) 닫기 버튼 클릭시 액션
+    //상세 정보(모달창) 닫기 버튼 클릭시 액션
     $(".about_close").click(function () {
         $(this).parents("section.about").fadeOut();
     });
